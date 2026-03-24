@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#87ccee",
+                        "accent-yellow": "#facc15",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0f14",
+                        "deep-blue": "#0f172a",
+                        "slate-custom": "#64748b",
+                        "luxury-gold": "rgba(212, 175, 55, 0.3)"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-reveal {
+            animation: fadeInUp 1.2s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .text-huge {
+            font-size: clamp(4rem, 18vw, 22rem);
+            line-height: 0.7;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(0, 0, 0, 0.05);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 50px -20px rgba(0,0,0,0.03);
+        }
+        .img-zoom {
+            transition: transform 1.5s cubic-bezier(0.2, 0, 0.2, 1);
+        }
+        .group:hover .img-zoom {
+            transform: scale(1.03);
+        }
+        .tracking-supreme {
+            letter-spacing: 0.4em;
+        }
+        .ultra-thin-border {
+            border-width: 0.5px;
+        }
+        .studio-lighting {
+            background: radial-gradient(circle at 20% 30%, rgba(135, 204, 238, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(250, 204, 21, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-accent-yellow/30">
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 z-[100] px-6 lg:px-12 py-10 pointer-events-none">
+<div class="max-w-[1600px] mx-auto flex items-center justify-between glass-nav px-10 py-5 rounded-full pointer-events-auto soft-shadow transition-all duration-700 hover:py-6">
+<nav class="hidden lg:flex items-center gap-12 text-[10px] font-bold uppercase tracking-supreme">
+<div class="flex items-center gap-2 cursor-pointer group">
+<span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180 duration-500">grid_view</span>
+<a class="hover:text-primary transition-colors" href="#">Menu</a>
+</div>
+<div class="flex items-center gap-1 cursor-pointer group">
+<a class="hover:text-primary transition-colors" href="#">Collection</a>
+<span class="material-symbols-outlined text-[14px] opacity-50 group-hover:translate-y-0.5 transition-transform">expand_more</span>
+</div>
+<a class="hover:text-primary transition-colors" href="#">The Lab</a>
+</nav>
+<div class="absolute left-1/2 -translate-x-1/2">
+<h1 class="text-2xl font-black tracking-[-0.07em] scale-y-110">SOFTCARE</h1>
+</div>
+<div class="flex items-center gap-12">
+<nav class="hidden lg:flex items-center gap-12 text-[10px] font-bold uppercase tracking-supreme">
+<a class="hover:text-primary transition-colors" href="#">Reviews</a>
+<a class="hover:text-primary transition-colors" href="#">Editorial</a>
+</nav>
+<button class="bg-slate-900 text-white px-10 py-3.5 rounded-full font-bold text-[10px] uppercase tracking-supreme hover:bg-primary transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                Shop Now
+            </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full h-screen bg-deep-blue overflow-hidden flex flex-col justify-end">
+<!-- Studio Lighting Effect -->
+<div class="absolute inset-0 z-[1] studio-lighting pointer-events-none"></div>
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Model holding Softcare serum" class="w-full h-full object-cover object-center brightness-95 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChpHAM06We7Bskzqrf0WLX2LoNpytmDSqnAEpTM5y5E8LLgirmHqn1bB3oYEmEd383j--oWM5L19Vy9hmu-ievnVn0sWVVK4uA_w0x6P5V7sT_ByzehsPkEtO23_59VCenVzgWcRw5fndv1V5CWY9SdcMJKwKXcDq_ph4kWyYt26w9pLMyeHUwjCLf4kghQjicPzIgnPAg9uCAZmNeqd4NuTw5Cwo-FxrM0NIRi62SLjeki5avg0b8Alff_3pROJUIa7uD_IzaR08E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-blue via-transparent to-transparent opacity-80"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 px-8 lg:px-24 pb-0 w-full animate-reveal">
+<div class="max-w-5xl mb-16">
+<div class="h-12 w-px bg-accent-yellow/50 mb-8 ml-1"></div>
+<h3 class="text-white text-6xl lg:text-[140px] font-black leading-[0.85] mb-12 tracking-[-0.04em] uppercase italic">
+                Clinical<br/>Precision<br/>Pure Radiance
+            </h3>
+<div class="flex flex-col gap-2 mb-20 max-w-sm border-l ultra-thin-border border-white/30 pl-8">
+<div class="flex items-center gap-4 text-white">
+<span class="text-sm font-light text-accent-yellow italic">◈</span>
+<h4 class="font-bold text-[10px] uppercase tracking-supreme">PANTHENOL COMPLEX</h4>
+</div>
+<p class="text-slate-400 text-[11px] font-light leading-relaxed tracking-wider">
+                    Stabilized Vitamin B5 for cellular regeneration and barrier fortification.
+                </p>
+</div>
+</div>
+<!-- Giant Overlapping Text -->
+<div class="relative -mb-4 lg:-mb-24 select-none pointer-events-none overflow-hidden opacity-90">
+<h2 class="text-white text-huge font-black tracking-tighter uppercase whitespace-nowrap">
+                SOFTCARE SKIN
+            </h2>
+</div>
+</div>
+</section>
+<!-- Story Section -->
+<section class="bg-white py-48 px-6 lg:px-24 relative overflow-hidden">
+<!-- Faint background typography -->
+<div class="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none">
+<span class="text-[20vw] font-black whitespace-nowrap uppercase tracking-tighter">BIOLOGICAL ARTISTRY</span>
+</div>
+<!-- Decorative Accents -->
+<div class="absolute left-1/2 top-48 -translate-x-1/2 flex flex-col items-center gap-4 opacity-20">
+<div class="w-px h-24 bg-slate-900"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+</div>
+<div class="max-w-[1600px] mx-auto relative z-10">
+<div class="text-center mb-40 animate-reveal">
+<span class="text-[9px] font-bold tracking-supreme text-primary uppercase mb-6 block">Our Philosophy</span>
+<h2 class="text-5xl lg:text-7xl font-black mb-10 tracking-tight leading-[1.1] uppercase max-w-5xl mx-auto">TRANSFORMING SKIN HEALTH WITH BIOMIMETIC FORMULAS</h2>
+<p class="text-slate-400 max-w-2xl mx-auto text-[13px] font-light leading-relaxed tracking-wide">
+                Experience the intersection of advanced dermatology and natural radiance. Our formulas are crafted to respect your skin's biological clock with molecular precision.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+<!-- Featured Ritual -->
+<div class="lg:col-span-5 relative group animate-reveal">
+<div class="rounded-[2.5rem] overflow-hidden h-[850px] shadow-2xl bg-slate-100">
+<img alt="Serum Application" class="w-full h-full object-cover img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOKxdz_76HSy-6baVKWDe7Mj1Od6rLIXw150XNZwxKbx2ngth8UhIKspM_0VSgyxvqK4-XpxzgaP_iY3BYmvUl6lvyM-Mlj_HB8Z_yGahCeVs0NLZtfS_ZvMEs76NSbBDd1QJZWx6GP1SXTV6WG51o1mZfblOhYbihx3cNqCk9YhoMPDsCNsW1pio7aESN5jegPK-l0DpTwyQ1A2tplJRy9IeseVWOhD00VnHj0EKbAFDTK8VtvcYjIgQhKdtfT2VdvLZM7h4hp0lq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-40"></div>
+<div class="absolute bottom-16 left-16 text-white">
+<p class="text-[10px] font-bold uppercase tracking-supreme mb-6 text-accent-yellow">Step 01 / Ritual</p>
+<p class="text-4xl font-light leading-[1.15] max-w-xs">Morning revitalization with pure active ingredients.</p>
+<div class="mt-8 w-12 h-px bg-white/50"></div>
+</div>
+</div>
+</div>
+<!-- Products Grid -->
+<div class="lg:col-span-7 space-y-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product 1 -->
+<div class="group cursor-pointer animate-reveal">
+<div class="aspect-[4/5] mb-10 overflow-hidden rounded-3xl glass-card relative soft-shadow">
+<img alt="Ampoule" class="w-full h-full object-cover img-zoom opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqWhfPOWrM9w2wvTYsaejFZCTQSUkBh0Yv9FHWp5kVUD7KcsU1iq23j1LhGajxBIPHiQQmOLy68CtGeWc9A0ZJMX1-c0eY2eleP-NIOGB1lNC344PkG9jKIcla9BWVCzFFJ-OWrjIOLC3rxftvc6AIRHHmk8AX9cwmhYqembwKoDdCdX283O1Smo5u_veUSroDTgGfRRDV6fVvOpNMDsVfnhhMiojnOdEc23_pia8y-pXTLcOfF7ovIHCLlmHUj5Q3MJinKOk7NUT2"/>
+</div>
+<h4 class="font-bold text-[10px] tracking-supreme mb-3 uppercase">AMPOULE CONCENTRATE</h4>
+<div class="h-px w-6 bg-primary/40 mb-4 transition-all group-hover:w-12 group-hover:bg-primary duration-500"></div>
+<p class="text-slate-400 font-light text-[12px] tracking-widest">$225.00</p>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer animate-reveal" style="animation-delay: 0.2s">
+<div class="aspect-[4/5] mb-10 overflow-hidden rounded-3xl glass-card relative soft-shadow">
+<img alt="Cleansing Oil" class="w-full h-full object-cover img-zoom opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxp7soDptETrP_MD3JPqKk-jL01qrG3zqxGRJnDFey7y3Zgjtcq_I2xCbmanjBe09O59VJmPfPjhx8nnpC_zZdUW_hvuKcMHKK9P4Tbz-8miAXUOHdnC6AhyXBsvpVNrY54pz6cYPnP8mDL5zXU6O_GZ3CVwAsSdzx7CV88xcxD-4CqzVh1CYBknXS3GePsrGVJbwolANpbRBKq1QDZ0Swi4lE7arNGkU-vixwUMpPJHMQjlK7Mup2b1y_A3yr7b5qMzuVo-J8bsRD"/>
+</div>
+<h4 class="font-bold text-[10px] tracking-supreme mb-3 uppercase">CLEANSING OIL</h4>
+<div class="h-px w-6 bg-primary/40 mb-4 transition-all group-hover:w-12 group-hover:bg-primary duration-500"></div>
+<p class="text-slate-400 font-light text-[12px] tracking-widest">$315.00</p>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer animate-reveal" style="animation-delay: 0.4s">
+<div class="aspect-[4/5] mb-10 overflow-hidden rounded-3xl glass-card relative soft-shadow">
+<img alt="Ampoule Foam" class="w-full h-full object-cover img-zoom opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJSlFMsxZJSLcoFP8fS5DoQs1tWUoLkEyGMzh6E_dXK0cxBEtcifG4jIoVwIJ_Xlg015TyCprHdK07t6Foj2SM9_CpH2kBqGdtenrBK7MXHOBSDCWfZa9kDCdLqwVdyWHKiBBzjl9QHzs7TazAlb7MGGExHFw_Qvh6YzYr_HqE-peoeeBYHCbCmW1efja6zId8qzT9desvaScWrs96MQrhHAqO1fHiefSXmKpss00bFFj8yVPAoVdJC_ZuxlAFFX2_mnIO-7qWNquN"/>
+</div>
+<h4 class="font-bold text-[10px] tracking-supreme mb-3 uppercase">AMPOULE FOAM</h4>
+<div class="h-px w-6 bg-primary/40 mb-4 transition-all group-hover:w-12 group-hover:bg-primary duration-500"></div>
+<p class="text-slate-400 font-light text-[12px] tracking-widest">$255.00</p>
+</div>
+</div>
+<!-- Editorial Callout -->
+<div class="bg-slate-50/50 p-20 rounded-[3rem] ultra-thin-border border-slate-200 flex flex-col items-center text-center relative overflow-hidden group">
+<div class="absolute inset-0 studio-lighting opacity-30"></div>
+<span class="text-[9px] font-bold tracking-supreme text-slate-400 uppercase mb-8 relative z-10">Scientific Perspective</span>
+<p class="text-3xl font-light italic mb-12 max-w-xl leading-snug text-slate-800 relative z-10">"True skin transformation requires molecular patience and an optimized cellular carrier system."</p>
+<a class="text-[10px] font-bold uppercase tracking-supreme border-b ultra-thin-border border-slate-900 pb-1.5 hover:text-primary hover:border-primary transition-all relative z-10 group-hover:-translate-y-1" href="#">Explore Bio-Delivery Tech</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Product Grid Section -->
+<section class="flex flex-col lg:flex-row min-h-screen border-t ultra-thin-border border-slate-100">
+<!-- Sidebar Split -->
+<div class="w-full lg:w-[450px] flex flex-row lg:flex-col sticky top-0 h-auto lg:h-screen overflow-hidden">
+<div class="flex-1 bg-deep-blue text-white flex flex-col items-center justify-between py-32 px-6 border-r ultra-thin-border border-white/5 relative">
+<div class="absolute inset-0 studio-lighting opacity-40"></div>
+<span class="vertical-text text-7xl font-black tracking-[0.15em] opacity-10 uppercase italic relative z-10">PERFECT</span>
+<div class="space-y-8 text-center relative z-10">
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[24px]">emergency</span>
+<span class="text-[10px] font-bold tracking-supreme uppercase">MADECASSOSIDE</span>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-primary text-white flex flex-col items-center justify-between py-32 px-6 relative">
+<div class="absolute inset-0 bg-white/10 opacity-20"></div>
+<span class="vertical-text text-7xl font-black tracking-[0.15em] opacity-20 uppercase italic relative z-10">GLOW</span>
+<div class="space-y-8 text-center relative z-10">
+<div class="flex flex-col items-center gap-4 text-deep-blue">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+<span class="text-[10px] font-bold tracking-supreme uppercase">CERAMIDE NP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Grid Content -->
+<div class="flex-1 bg-[#fcfcfc] p-12 lg:p-32">
+<div class="max-w-6xl mx-auto">
+<div class="flex items-center justify-between mb-24">
+<div class="flex flex-col gap-2">
+<span class="text-[9px] font-bold tracking-supreme text-primary uppercase">Curation</span>
+<h3 class="text-sm font-bold tracking-supreme uppercase text-slate-900">Essential Collection</h3>
+</div>
+<div class="h-px flex-1 mx-16 bg-slate-200/50"></div>
+<div class="flex gap-5">
+<button class="w-12 h-12 rounded-full border ultra-thin-border border-slate-200 flex items-center justify-center hover:bg-white hover:shadow-xl transition-all duration-500">
+<span class="material-symbols-outlined text-sm">west</span>
+</button>
+<button class="w-12 h-12 rounded-full border ultra-thin-border border-slate-200 flex items-center justify-center hover:bg-white hover:shadow-xl transition-all duration-500 text-primary">
+<span class="material-symbols-outlined text-sm">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-32">
+<!-- Grid Item 1 -->
+<div class="group animate-reveal">
+<div class="relative aspect-square mb-10 glass-card rounded-[2.5rem] overflow-hidden soft-shadow p-12 flex items-center justify-center">
+<img alt="Honey Mask" class="w-full h-full object-contain img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATherIn81whEaRuvJqRhitccgazDaU_-Cz2OPTfLgUWA8jsD0J6MtLeQz9EADioMNeAPsd53OOs3HEpVd26mUQkZ5CYQY56dkVJMbgeAEaJSy0E1ZeZsir0imScJCCaBotFfrPC6iDLEnWdofYeXUJ1V3j9No2hGBHc-t1o1GK4xjX4hXrHwt_UNtRRqqjkP3VfOxphyalR69TsAxDSuamNnI-SC9POLpbnhuZfkbTs4iQsRNs9sPySfZQSlxZl0aJOFd6KVrvrRL3"/>
+<button class="absolute top-8 right-8 text-slate-300 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 duration-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 pl-2">
+<p class="text-[9px] font-bold text-primary uppercase tracking-supreme">Intensive Treatment</p>
+<h5 class="font-bold text-xs tracking-widest uppercase text-slate-800">HONEY REPAIR MASK</h5>
+<p class="text-[11px] text-slate-400 font-light tracking-widest">$180.00</p>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group animate-reveal" style="animation-delay: 0.1s">
+<div class="relative aspect-square mb-10 glass-card rounded-[2.5rem] overflow-hidden soft-shadow p-12 flex items-center justify-center">
+<img alt="Delight Lotion" class="w-full h-full object-contain img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2h02qYlM_AKYa66tpu_l04E70dnaJV8r5sYyMJBeGiPG5FieUKG7jXj9k4XScXmvq4tEW1vXmaezwYhKUTjIU54NIrFxRnp4nQ33uWYntGbTfKvelmeGUG-XaO4Smk9pqsTJ8g4N9_OJ9n-J8uSgWZz1ng7M5scN03I1yZhRX93B2hxibTbEn1uqIofzKJq0pUNCbXMAMtjxJHPT3EDqRiVUzAG2S-GGCkQ_2FKRZx-WpWX14fjPncuZlKgY2Ns5wqFHQ7r0DR5A7"/>
+<button class="absolute top-8 right-8 text-slate-300 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 duration-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 pl-2">
+<p class="text-[9px] font-bold text-primary uppercase tracking-supreme">Daily Moisture</p>
+<h5 class="font-bold text-xs tracking-widest uppercase text-slate-800">DELIGHT BODY LOTION</h5>
+<p class="text-[11px] text-slate-400 font-light tracking-widest">$165.00</p>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="group animate-reveal" style="animation-delay: 0.2s">
+<div class="relative aspect-square mb-10 glass-card rounded-[2.5rem] overflow-hidden soft-shadow p-12 flex items-center justify-center">
+<img alt="Hydrating Lotion" class="w-full h-full object-contain img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX_A25-YpfIg_868mGvd3wpmMBRUpMjlKWhvEVVsSWmVrL8t-d4luHgMb3Xz6RyCp4uYikekmZoLsEzz2Y0_IrBMxjSJ3Fsows96VNQ3fGIYKx7POr2jgaSqGFoT1A_p9y6O51-XHccxw7kJov37AvMXK5dyZsslXTcr09HIJGcGv1oE7mhSFgbr-rO9yfrZGGA-JRsGfGN4YjtSLXe9cwdSwPz8os_yV35WrKQo8pUKRKsHlmguZSF3srfYMAymJmQIQxKNg8EmWU"/>
+<button class="absolute top-8 right-8 text-slate-300 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 duration-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 pl-2">
+<p class="text-[9px] font-bold text-primary uppercase tracking-supreme">Hydration</p>
+<h5 class="font-bold text-xs tracking-widest uppercase text-slate-800">ULTRA HYDRATING EMULSION</h5>
+<p class="text-[11px] text-slate-400 font-light tracking-widest">$190.00</p>
+</div>
+</div>
+<!-- Grid Item 4 -->
+<div class="group animate-reveal" style="animation-delay: 0.3s">
+<div class="relative aspect-square mb-10 glass-card rounded-[2.5rem] overflow-hidden soft-shadow p-12 flex items-center justify-center">
+<img alt="Recovery Cream" class="w-full h-full object-contain img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8BaIByPa-Ot9mLZRJw1ikqARyqNKjHzRJk2Uvxgg4LD-vlI8DCWOtmSpzWwVz7jiZr0bWkjoyzmSQFmpsHQRd5RnYNYX5CgLA46dWLONOmwxMxvQo7SzpJPQhmi8ejo8t9AS035F3vh7_WVGtKYdslrHkoI4QdsKxUvIOHkJmk7G6sTezRawJPXsT60AFv1b1B9ahC2myn0sU-jfN6y0aUAJkD9ubGBpQWsjGGrY9WG2HIIwkOLvb-Ihw8haVfWx8NTyu7cPFi7pw"/>
+</div>
+<div class="flex flex-col gap-2 pl-2">
+<p class="text-[9px] font-bold text-primary uppercase tracking-supreme">Repair</p>
+<h5 class="font-bold text-xs tracking-widest uppercase text-slate-800">BIO-RECOVERY NIGHT CREAM</h5>
+<p class="text-[11px] text-slate-400 font-light tracking-widest">$210.00</p>
+</div>
+</div>
+<!-- Grid Item 5 -->
+<div class="group animate-reveal" style="animation-delay: 0.4s">
+<div class="relative aspect-square mb-10 glass-card rounded-[2.5rem] overflow-hidden soft-shadow p-12 flex items-center justify-center">
+<img alt="Sun Defense" class="w-full h-full object-contain img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSDj7DNdeowQwk59qmkGflpfCwUz7zN8pYngGUrLy16y4ImKni9wIEY4g2AccqNDJPYa2XNYV6AtsC6OW8GIbai2TP8W8WBr1FbVOJk5UN-jx0kz3gsO7gAgee7JtIwNYdgzgroYCeGnqrxK3KMv4PAxYR701Q5R1M_FF5GdbfV_KkxjKrFCzWfRDg0zl-LJCxKBwLjP1n4nhtQ6KcPzZ9bTrA6HDGlTw2-iP3p6YvW47ZhBf0ju_YGMRZU5F5D6gOXH6T2F_0oQ-c"/>
+</div>
+<div class="flex flex-col gap-2 pl-2">
+<p class="text-[9px] font-bold text-primary uppercase tracking-supreme">Defense</p>
+<h5 class="font-bold text-xs tracking-widest uppercase text-slate-800">MINERAL SUN SHIELD SPF50</h5>
+<p class="text-[11px] text-slate-400 font-light tracking-widest">$145.00</p>
+</div>
+</div>
+<!-- Grid Item 6 -->
+<div class="group animate-reveal" style="animation-delay: 0.5s">
+<div class="relative aspect-square mb-10 glass-card rounded-[2.5rem] overflow-hidden soft-shadow p-12 flex items-center justify-center">
+<img alt="Rose Toner" class="w-full h-full object-contain img-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIrhvtO7jmFgv_gHYsPZlF96J6DYAvb7uGg4tPd73h6cniFXkiE1PALu29ngLjK2oxMFaml1X5cZp-zaJnVzEf2I87bIoo9zLMndjNvO7NCTYYQvBQQ6M5XNWD8LGZB1FxjPpgBNAXhCUriUwzIVhaj8T4GpZzoeJRMv_jLb-lFrB-FsWlZjYGAKE5LY-OAvUDWX19A54P-DhuUK5CvItVWD9jY1K0vNIblcQ9XkWivGCM-q08rCvaJevuiXRXJGPOkrCToOjaD4hB"/>
+</div>
+<div class="flex flex-col gap-2 pl-2">
+<p class="text-[9px] font-bold text-primary uppercase tracking-supreme">Clarify</p>
+<h5 class="font-bold text-xs tracking-widest uppercase text-slate-800">ROSE BALANCING TONER</h5>
+<p class="text-[11px] text-slate-400 font-light tracking-widest">$120.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-deep-blue text-white py-48 px-6 lg:px-24 relative overflow-hidden">
+<div class="absolute inset-0 studio-lighting opacity-20"></div>
+<div class="max-w-[1600px] mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
+<div class="lg:col-span-4">
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-accent-yellow text-4xl">water_drop</span>
+<h1 class="text-3xl font-black tracking-[-0.07em]">SOFTCARE</h1>
+</div>
+<p class="text-slate-400 text-[13px] font-light leading-relaxed max-w-sm mb-16 tracking-wide">
+                    Redefining beauty through clinical integrity. Our laboratory develops specialized formulas that respect the skin's complex biological ecosystem.
+                </p>
+<div class="flex gap-8">
+<a class="w-12 h-12 border ultra-thin-border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all duration-700" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div class="lg:col-span-2">
+<h6 class="text-[10px] font-bold mb-12 text-primary uppercase tracking-supreme">Collection</h6>
+<ul class="space-y-8 text-[11px] font-light text-slate-400">
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">The Edit</a></li>
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">Serums &amp; Ampoules</a></li>
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">Hydration Guides</a></li>
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">New Arrivals</a></li>
+</ul>
+</div>
+<div class="lg:col-span-2">
+<h6 class="text-[10px] font-bold mb-12 text-primary uppercase tracking-supreme">Philosophy</h6>
+<ul class="space-y-8 text-[11px] font-light text-slate-400">
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">Our Lab</a></li>
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">Ingredients</a></li>
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">Clinical Trials</a></li>
+<li><a class="hover:text-white transition-colors duration-500 block" href="#">Sourcing</a></li>
+</ul>
+</div>
+<div class="lg:col-span-4">
+<h6 class="text-[10px] font-bold mb-12 text-primary uppercase tracking-supreme">Newsletter</h6>
+<p class="text-[11px] font-light text-slate-400 mb-10 leading-relaxed tracking-wide">Early access to clinical releases and research updates.</p>
+<div class="flex flex-col gap-6">
+<input class="bg-transparent border-b ultra-thin-border border-white/20 focus:border-primary rounded-none px-0 py-5 text-[11px] font-light outline-none transition-all placeholder:text-slate-600 tracking-supreme" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-white text-slate-900 px-12 py-5 rounded-full font-bold text-[10px] uppercase tracking-supreme hover:bg-accent-yellow transition-all self-start hover:scale-105">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="border-t ultra-thin-border border-white/5 mt-48 pt-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="text-slate-500 text-[9px] font-bold tracking-supreme uppercase">© 2024 SOFTCARE SKIN — BIOLOGICAL INTEGRITY</p>
+<div class="flex gap-12 text-slate-500 text-[9px] font-bold tracking-supreme uppercase">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

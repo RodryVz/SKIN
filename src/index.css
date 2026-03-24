@@ -1,0 +1,104 @@
+/* =============================================
+   index.css — Global styles for Softcare Skin
+   Tailwind is loaded via CDN in index.html.
+   Only custom utilities that cannot be expressed
+   by Tailwind CDN classes belong here.
+   ============================================= */
+
+/* ---------- Reveal animation ---------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-reveal {
+  animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ---------- Marquee (infinite scroll ticker) ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+.marquee-wrapper {
+  overflow: hidden;
+  display: flex;
+}
+
+/* ---------- Layout helpers ---------- */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ---------- Typography ---------- */
+.text-huge {
+  font-size: clamp(4rem, 18vw, 22rem);
+  line-height: 0.82;
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid rgba(0, 0, 0, 0.06);
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Shadows ---------- */
+.soft-shadow {
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Image zoom on group hover ---------- */
+.img-zoom {
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .img-zoom {
+  transform: scale(1.04);
+}
+
+/* ---------- Letter spacing custom ---------- */
+.tracking-supreme {
+  letter-spacing: 0.4em;
+}
+
+/* ---------- Ultra-thin border ---------- */
+.ultra-thin-border {
+  border-width: 0.5px;
+}
+
+/* ---------- Ambient lighting effect ---------- */
+.studio-lighting {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(135, 204, 238, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(250, 204, 21, 0.05) 0%, transparent 50%);
+}
+
+/* ---------- Smooth page scroll ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Focus ring (accessibility) ---------- */
+:focus-visible {
+  outline: 2px solid #f43f5e;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Scrollbar (subtle) ---------- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); border-radius: 99px; }
